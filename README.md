@@ -1,135 +1,123 @@
-# 🎮 Unity 客户端 - 德州扑克游戏
+![11](https://github.com/user-attachments/assets/47fc4150-5b49-44f4-b7c9-b22401705216)
+# 🃏 德州扑克源码 | 德州俱乐部源码 | 德州扑克服务器引擎
 
-本目录包含《实时多人德州扑克》的 **Unity 客户端完整源码**，使用 C# 开发，支持 Android / iOS / PC 平台。
+**德州源码 · 德州联盟源码 · 德州私人局 · 德州朋友局源码**  
+实时多人**德州扑克**高并发服务器引擎（C++ + WebSocket），支持私人局/朋友局/俱乐部/联盟模式
+
+**Texas Hold'em Multiplayer Poker Source Code** | **Real-time Multiplayer Poker Server Engine** | Scalable Game Backend
+
+[![Stars](https://img.shields.io/github/stars/pokerdeveloper/dezhou-poker-source-code.svg)](https://github.com/pokerdeveloper/dezhou-poker-source-code/stargazers)
+[![Forks](https://img.shields.io/github/forks/pokerdeveloper/dezhou-poker-source-code.svg)](https://github.com/pokerdeveloper/dezhou-poker-source-code/network/members)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---
 
-## 📦 环境要求
+## ✨ 项目核心亮点
 
-| 组件 | 版本要求 |
+- **服务器权威架构**：所有游戏逻辑在服务端执行，有效防止作弊和外挂
+- **高并发实时通信**：基于 WebSocket 低延迟同步，支持高并发多人对战
+- **完整德州支持**：经典德州（9人/6人桌）、私人局、朋友局、俱乐部/联盟模式
+- **AI Bot 支持**：内置智能机器人，用于测试或自动填充桌位
+- **模块化高扩展**：C++ 代码结构清晰，易于二次开发和功能扩展
+- **数据持久化**：支持手牌记录、玩家行为日志，便于反作弊和数据分析
+
+> **⚠️ 重要声明**：本项目**仅供学习和研究使用**，严格禁止用于任何真实货币赌博。商业使用请自行遵守当地法律法规，作者不承担任何法律责任。
+
+---
+
+## 📸 项目截图（真实界面展示）
+![德州扑克游戏大厅](screenshots/01.jpg)
+
+![牌桌实时对战](screenshots/02.jpg)
+
+![大厅多种玩法](screenshots/03.jpg)
+
+![俱乐部与联盟模式](screenshots/04.jpg)
+
+![MTT 锦标赛界面](screenshots/05.jpg)
+
+![短牌玩法展示](screenshots/06.jpg)
+
+![AI Bot 测试](screenshots/08.jpg)
+
+![游戏对战场景](screenshots/10.jpg)
+
+![房间管理界面](screenshots/11.jpg)
+
+![后台与数据统计](screenshots/12.jpg)
+
+![更多功能展示](screenshots/13.jpg)
+
+
+## 🚀 快速开始
+
+**Docker 一键启动**（推荐新手）
+
+git clone https://github.com/pokerdeveloper/dezhou-poker-source-code.git
+cd dezhou-poker-source-code
+docker-compose up -d
+
+源码编译运行：
+mkdir build && cd build
+cmake .. -DCMAKE_BUILD_TYPE=Release
+make -j8
+./poker_server
+
+##
+详细编译、配置和协议文档请查看 docs/ 目录
+## 🎮 核心功能
+
+| 模块 | 功能说明 |
 | :--- | :--- |
-| **Unity 编辑器** | 2019.4 或更高版本 (推荐 2020.3 LTS) |
-| **操作系统** | Windows 10 / macOS 11+ / Ubuntu 20.04 |
-| **目标平台** | Android, iOS, Windows, macOS |
+| **金币大厅** | 坐满即玩、快速匹配、多级别桌、每日比赛 |
+| **俱乐部/私人局** | 好友约局、联盟创建、俱乐部赛、战绩统计 |
+| **锦标赛系统** | 多桌MTT、SNG、 bounty锦标赛、卫星赛 |
+| **特色玩法** | 德州、**短牌**、奥马哈等 |
+| **社交与安全** | 好友系统、聊天表情、**智能反作弊系统**、日志审计 |
+
+## 📈 未来路线图
+
+支持更多扑克变体（奥马哈、短牌等）
+增加 SNG/MTT 锦标赛完整流程
+优化分布式部署与高并发性能
+提供 Unity / Web 示例客户端
+
+欢迎 Issue 反馈和 Pull Request 贡献！
+
+## 📞 联系方式
+
+Telegram：@fox_lovemyself
+
+欢迎技术交流、部署咨询或合作讨论。
+
+## 📦 技术交付物
+
+*   **客户端源码**：Unity 2019+，C# 编写，支持打包 Android/iOS/PC。
+*   **服务端源码**：C++ 高并发框架，Linux环境，支持水平扩展。
+*   **数据库**：MySQL + Redis 结构，含全部表结构文档。
+*   **配套工具**：后台管理系统、机器人配置工具、游戏日志查看器。
+*   **部署服务**：可选 **协助部署到你的服务器** 服务。
 
 ---
 
-## 🚀 快速开始（5分钟运行客户端）
+## 🚀 为什么选择我们？
 
-### 第一步：用 Unity 打开项目
+1.  **经过市场验证**：源码来自**已停服的成熟商业项目**，绝非Demo。
+2.  **代码质量可靠**：结构清晰，注释完善，**众多技术开发者评价“易于二开”**。
+3.  **服务保障**：提供1年技术支持和答疑，帮你度过上线初期。
+4.  **合规建议**：我们了解各地棋牌政策，可提供合规运营建议。
 
-```bash
-# 1. 确保您已克隆完整仓库
-git clone https://github.com/pokerdeveloper/Texas-Hold-em-Poker-Source-Code.git
-cd Texas-Hold-em-Poker-Source-Code/client
+## ⭐ 支持项目
+如果你觉得这个德州扑克源码有帮助，欢迎 Star 支持！
 
-# 2. 打开 Unity Hub，点击 "添加项目" → 选择本目录 (client 文件夹)
-# 3. 等待 Unity 导入所有资源（首次打开需 2-5 分钟）
-第二步：配置服务器地址（关键步骤）
-客户端需要连接到一个运行中的游戏服务端才能进行对战。请按以下步骤修改服务器地址：
 
-在 Unity 编辑器中，打开目录：Assets/Scripts/Network/
-
-找到 GameServerConfig.cs 文件，双击打开
-
-修改其中的服务器地址配置：
-// 请根据您的实际服务端部署地址修改
-public static class GameServerConfig
-{
-    // 开发测试环境（本地服务端）
-    public static string ServerHost = "127.0.0.1";
-    public static int ServerPort = 8080;
-    
-    // 如果是连接作者提供的演示服务器，请联系获取地址和端口
-    // public static string ServerHost = "demo.poker.com";
-    // public static int ServerPort = 8080;
-    
-    // WebSocket 连接地址（完整）
-    public static string WebSocketUrl = $"ws://{ServerHost}:{ServerPort}/ws";
-}
-
-第三步：运行游戏
-在 Unity 编辑器中，打开场景：Assets/Scenes/Login.unity
-
-点击顶部工具栏的 ▶ 播放按钮，即可在编辑器中直接试玩
-
-如需打包到手机/PC：
-
-点击 File → Build Settings
-
-选择目标平台（Android / iOS / PC）
-
-点击 Build 生成安装包
-
-🔧 常见问题
-Q1：打开项目后出现脚本编译错误？
-A：请检查 Unity 版本是否为 2019.4 或更高。若仍报错，请尝试：Assets → Reimport All。
-
-Q2：连接服务器失败 / 无法登录？
-A：请依次检查：
-
-服务端是否已启动（运行 ./poker_server）
-
-防火墙是否开放了对应端口（默认 8080）
-
-GameServerConfig.cs 中的 IP 和端口是否正确
-
-Q3：在哪里修改游戏界面 / 添加新功能？
-A：主要代码位于：
-
-Assets/Scripts/UI/ → 所有 UI 界面逻辑
-
-Assets/Scripts/Game/ → 牌桌逻辑、动画控制
-
-Assets/Scripts/Network/ → WebSocket 通信协议
-
-Q4：是否可以商用 / 二次分发？
-A：本客户端源码作为完整项目的一部分，商用需购买商业授权。具体请联系：Telegram @alibabama401
-
-📞 获取技术支持
-商务合作 / 完整服务端对接：联系 Telegram @alibabama401
-
-技术问题：请先查阅 ../Doc/ 目录下的协议与部署文档
-
-📄 客户端功能清单（当前版本）
-模块	功能
-登录/注册	账号密码、游客登录
-大厅	金币场入口、俱乐部入口、商城
-牌桌	9人德州、实时下注/弃牌/加注、动画特效
-俱乐部	创建/加入、好友约局
-个人中心	战绩、金币记录、头像
-祝您开发愉快！ 🎉
-
-如有任何问题，欢迎通过 Issue 或联系作者反馈。
-
-text
-
----
-
-## 使用步骤
-
-1. 打开您的仓库：`https://github.com/pokerdeveloper/Texas-Hold-em-Poker-Source-Code`
-2. 进入 `client` 文件夹
-3. 点击 **Add file** → **Create new file**
-4. 在文件名处输入：`README.md`
-5. 将上面的**全部代码**复制粘贴到内容框中
-6. 滚动到底部，点击 **Commit new file**
-
-完成！之后任何人访问 `client/` 目录，都会直接看到这份格式完整的说明文档。
-本回答由 AI 生成，内容仅供参考，请仔细甄别。
+再次声明：本仓库为开源学习项目，不包含任何支付或真实赌博功能。请遵守当地法律法规，合理使用。
 
 
 
 
----
+This project focuses on real-time game architecture and system design.
 
-## 使用步骤
+For advanced implementations or custom game backend systems, professional discussions are welcome.
 
-1. 打开您的仓库：`https://github.com/pokerdeveloper/Texas-Hold-em-Poker-Source-Code`
-2. 进入 `client` 文件夹
-3. 点击 **Add file** → **Create new file**
-4. 在文件名处输入：`README.md`
-5. 将上面的**全部代码**复制粘贴到内容框中
-6. 滚动到底部，点击 **Commit new file**
 
-完成！之后任何人访问 `client/` 目录，都会直接看到这份格式完整的说明文档。
