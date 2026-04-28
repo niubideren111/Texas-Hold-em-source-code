@@ -1,133 +1,135 @@
-# 🃏 Texas Hold'em Poker Source Code | 德州扑克源码 | 德州撲克源碼
+# 🎮 Unity 客户端 - 德州扑克游戏
 
-🔥 Production-ready system (NOT demo) ｜ 可直接上线运营（非演示项目） ｜ 可直接運營（非測試項目）  
-🔥 Already used in real projects ｜ 已用于真实项目 ｜ 已用於真實項目  
-🔥 Start your poker business in days ｜ 几天内启动你的德州业务 ｜ 幾天內啟動你的德州業務  
-🔥 Supports iOS / Android / Web ｜ 支持多端 ｜ 支援多端  
-
-💰 Build your own profitable poker platform faster than ever  
-💰 快速搭建属于你自己的盈利扑克平台  
-💰 快速建立屬於你的盈利撲克平台  
+本目录包含《实时多人德州扑克》的 **Unity 客户端完整源码**，使用 C# 开发，支持 Android / iOS / PC 平台。
 
 ---
 
-## 🚀 Real Business, Not Just Code ｜ 真正的商业系统 ｜ 真正的商業系統
+## 📦 环境要求
 
-This is NOT just a demo project. This is a real, working poker system.  
-这不是演示代码，而是一套可真正运营的系统。  
-這不是測試代碼，而是一套可真正營運的系統。  
-
-👉 You can use it to build a real poker business  
-👉 可用于搭建真实盈利项目  
-👉 可用於搭建真實盈利項目  
+| 组件 | 版本要求 |
+| :--- | :--- |
+| **Unity 编辑器** | 2019.4 或更高版本 (推荐 2020.3 LTS) |
+| **操作系统** | Windows 10 / macOS 11+ / Ubuntu 20.04 |
+| **目标平台** | Android, iOS, Windows, macOS |
 
 ---
 
-## 💰 Monetization ｜ 盈利方式 ｜ 盈利方式
+## 🚀 快速开始（5分钟运行客户端）
 
-- Poker platform (online game) ｜ 扑克平台 ｜ 撲克平台  
-- Club / agent system ｜ 俱乐部系统 ｜ 俱樂部系統  
-- Casino business ｜ 博弈系统 ｜ 博弈系統  
+### 第一步：用 Unity 打开项目
 
-💡 Revenue model / 盈利模式 / 盈利模式：
-- Rake (抽水)
-- Membership (会员)
-- In-app purchase (充值)
+```bash
+# 1. 确保您已克隆完整仓库
+git clone https://github.com/pokerdeveloper/Texas-Hold-em-Poker-Source-Code.git
+cd Texas-Hold-em-Poker-Source-Code/client
 
-👉 Turn this into a real income source  
-👉 变现能力强  
-👉 可實現穩定收入  
+# 2. 打开 Unity Hub，点击 "添加项目" → 选择本目录 (client 文件夹)
+# 3. 等待 Unity 导入所有资源（首次打开需 2-5 分钟）
+第二步：配置服务器地址（关键步骤）
+客户端需要连接到一个运行中的游戏服务端才能进行对战。请按以下步骤修改服务器地址：
 
----
+在 Unity 编辑器中，打开目录：Assets/Scripts/Network/
 
+找到 GameServerConfig.cs 文件，双击打开
 
----
+修改其中的服务器地址配置：
+// 请根据您的实际服务端部署地址修改
+public static class GameServerConfig
+{
+    // 开发测试环境（本地服务端）
+    public static string ServerHost = "127.0.0.1";
+    public static int ServerPort = 8080;
+    
+    // 如果是连接作者提供的演示服务器，请联系获取地址和端口
+    // public static string ServerHost = "demo.poker.com";
+    // public static int ServerPort = 8080;
+    
+    // WebSocket 连接地址（完整）
+    public static string WebSocketUrl = $"ws://{ServerHost}:{ServerPort}/ws";
+}
 
-## ✨ Features | 核心功能 | 功能特色
+第三步：运行游戏
+在 Unity 编辑器中，打开场景：Assets/Scenes/Login.unity
 
-* ✅ Full source code (Server + Client)
-* ✅ Real-time multiplayer (WebSocket)
-* ✅ High-performance C++ engine
-* ✅ Club / tournament system
-* ✅ Stable running product
-* ✅ Scalable architecture
+点击顶部工具栏的 ▶ 播放按钮，即可在编辑器中直接试玩
 
----
+如需打包到手机/PC：
 
-## 📦 Tech Stack | 技术架构 | 技術架構
+点击 File → Build Settings
 
-* C++ (Game Logic)
-* Node.js (Gateway Server)
-* WebSocket
-* MySQL / Redis
+选择目标平台（Android / iOS / PC）
 
----
+点击 Build 生成安装包
 
-## 🎯 What You Get | 你将获得 | 您將獲得
+🔧 常见问题
+Q1：打开项目后出现脚本编译错误？
+A：请检查 Unity 版本是否为 2019.4 或更高。若仍报错，请尝试：Assets → Reimport All。
 
-* Full source code
-* Server + Client
-* Admin panel
-* Database
-* Deployment guide
+Q2：连接服务器失败 / 无法登录？
+A：请依次检查：
 
-🔥 Save 6–12 months development time
+服务端是否已启动（运行 ./poker_server）
 
----
+防火墙是否开放了对应端口（默认 8080）
 
-## 💰 Why Choose This Project | 为什么选择 | 為什麼選擇
+GameServerConfig.cs 中的 IP 和端口是否正确
 
-* ✅ Already running product（非Demo）
-* ✅ Faster than developing from scratch
-* ✅ Stable & tested system
-* ✅ Customizable
+Q3：在哪里修改游戏界面 / 添加新功能？
+A：主要代码位于：
 
-👉 Reduce risk, start faster
+Assets/Scripts/UI/ → 所有 UI 界面逻辑
 
----
+Assets/Scripts/Game/ → 牌桌逻辑、动画控制
 
-## 📸 Screenshots | 项目展示 | 專案展示
+Assets/Scripts/Network/ → WebSocket 通信协议
 
-![AB7AF159B3F73F5AEB2C720E957074F4](https://github.com/user-attachments/assets/8011233b-daae-45ed-8480-f03accfb6910)
-![6EF906300DBB3B2C29583B8027D40F5C](https://github.com/user-attachments/assets/59d5dd0a-c2a7-4da3-8ae9-829a1af053f8)
+Q4：是否可以商用 / 二次分发？
+A：本客户端源码作为完整项目的一部分，商用需购买商业授权。具体请联系：Telegram @alibabama401
 
+📞 获取技术支持
+商务合作 / 完整服务端对接：联系 Telegram @alibabama401
 
-![牌桌4](https://github.com/user-attachments/assets/17bf7a55-1ca0-4326-a525-18d55248f715)
-![牌桌2](https://github.com/user-attachments/assets/9c878e63-e2db-44a2-a07d-8ebaedd6c7fb)
-![牌桌1-9人](https://github.com/user-attachments/assets/b0f58913-03e1-4b23-85b2-8a40de3e2a99)
-![牌桌1-6人](https://github.com/user-attachments/assets/7ca3a56a-5ffc-413a-8d19-4100e7e60132)
-![牌桌1-2人](https://github.com/user-attachments/assets/7aaabf72-4201-410f-b017-2dd318f8b32a)
-![牌谱记录1](https://github.com/user-attachments/assets/02e6caaf-6de1-4eae-88bd-c8951a90da0d)
-![聊天](https://github.com/user-attachments/assets/384199bf-6515-4242-8212-147ed85242e5)
+技术问题：请先查阅 ../Doc/ 目录下的协议与部署文档
 
----
+📄 客户端功能清单（当前版本）
+模块	功能
+登录/注册	账号密码、游客登录
+大厅	金币场入口、俱乐部入口、商城
+牌桌	9人德州、实时下注/弃牌/加注、动画特效
+俱乐部	创建/加入、好友约局
+个人中心	战绩、金币记录、头像
+祝您开发愉快！ 🎉
 
-## 🔐 Security | 安全说明 | 安全說明
+如有任何问题，欢迎通过 Issue 或联系作者反馈。
 
-* Server-side logic (no client cheating)
-* Secure communication design
-* Recommended: deploy on private server
-
----
-
-## 📞 Contact | 联系方式 | 聯絡方式
-
-* Telegram: @fox_lovemyself
-* Email: zyue02561@gmail.com
-
-💬 Fast response within 24h
-💼 Custom development available
+text
 
 ---
 
-## ⚠️ Disclaimer | 声明 | 聲明
+## 使用步骤
 
-For educational purposes only.
-请遵守当地法律法规。
+1. 打开您的仓库：`https://github.com/pokerdeveloper/Texas-Hold-em-Poker-Source-Code`
+2. 进入 `client` 文件夹
+3. 点击 **Add file** → **Create new file**
+4. 在文件名处输入：`README.md`
+5. 将上面的**全部代码**复制粘贴到内容框中
+6. 滚动到底部，点击 **Commit new file**
+
+完成！之后任何人访问 `client/` 目录，都会直接看到这份格式完整的说明文档。
+本回答由 AI 生成，内容仅供参考，请仔细甄别。
+
+
+
 
 ---
 
-## 🔍 Keywords (SEO)
+## 使用步骤
 
-Texas Hold'em source code, poker game source code, online poker software, casino game system, poker engine, poker club system, multiplayer poker server, texas holdem unity, 棋牌游戏源码, 德州扑克源码
+1. 打开您的仓库：`https://github.com/pokerdeveloper/Texas-Hold-em-Poker-Source-Code`
+2. 进入 `client` 文件夹
+3. 点击 **Add file** → **Create new file**
+4. 在文件名处输入：`README.md`
+5. 将上面的**全部代码**复制粘贴到内容框中
+6. 滚动到底部，点击 **Commit new file**
 
+完成！之后任何人访问 `client/` 目录，都会直接看到这份格式完整的说明文档。
