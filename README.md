@@ -1,4 +1,4 @@
-# 🃏 德州扑克源码 | 德州俱乐部源码 |德州源码 |德州游戏源码| 德州扑克服务器引擎|德州私人局
+# 🃏 德州私人局源码(德州源码)｜朋友局 | 德州俱乐部 |
 # 🃏 德州扑克服务端引擎 | C++ 高并发多人游戏源码
 
 [![GitHub stars](https://img.shields.io/github/stars/niubideren111/Texas-Hold-em-source-code)](https://github.com/niubideren111/Texas-Hold-em-source-code/stargazers)
@@ -52,23 +52,6 @@
 
 ---
 
-## 🚀 快速开始
-
-### 方式一：使用 Docker 一键启动（推荐）
-
-
-# 克隆项目
-git clone https://github.com/niubideren111/Texas-Hold-em-source-code.git
-cd Texas-Hold-em-source-code
-
-# 启动服务（后台运行）
-docker-compose up -d
-
-方式二：从源码编译运行
-mkdir build && cd build
-cmake .. -DCMAKE_BUILD_TYPE=Release
-make -j8
-./poker_server
 📖 详细的编译选项、配置文件说明和协议文档，请查看项目根目录下的 docs/ 文件夹。
 
 ##🏗️ 技术架构
@@ -111,34 +94,38 @@ make -j8
 
 
 
+## 获取仓库
 
-## 📈 未来路线图
+```bash
+git clone https://github.com/niubideren111/Texas-Hold-em-source-code.git
+cd Texas-Hold-em-source-code
+```
 
-支持更多扑克变体（奥马哈、短牌等）
-增加 SNG/MTT 锦标赛完整流程
-优化分布式部署与高并发性能
-提供 Unity / Web 示例客户端
+克隆后从上面的文件入口开始阅读。若需要运行示例，请先核对项目中实际存在的依赖、版本、配置和启动脚本。
 
-欢迎 Issue 反馈和 Pull Request 贡献！
+## 常见问题
 
-## 📞 联系方式
+### 与俱乐部源码项目如何选择？
+本项目突出私人牌桌、朋友组局、Unity 场景和玩法流程；另一项目突出俱乐部服务接口与构建资料。
 
+### 是否提供 Docker 一键启动？
+当前公开文件中没有完整的 Docker Compose 部署工程，本页不提供一键启动承诺。
 
-    Telegram：@fox_lovemyself
+当前公开文件中没有完整的 Docker Compose 部署工程，本页不提供一键启动承诺。
 
-    技术问题或商业合作咨询，欢迎通过 Telegram 联系。
+## 相关项目
 
+- [dezhou-poker-club-source-code](https://github.com/niubideren111/dezhou-poker-club-source-code)
+- [Texas-Holdem-Game-Source-Code](https://github.com/niubideren111/Texas-Holdem-Game-Source-Code)
 
-## 📦 技术交付物
+## 项目咨询
 
-*   **客户端源码**：Unity 2019+，C# 编写，支持打包 Android/iOS/PC。
-*   **服务端源码**：C++ 高并发框架，Linux环境，支持水平扩展。
-*   **数据库**：MySQL + Redis 结构，含全部表结构文档。
-*   **配套工具**：后台管理系统、机器人配置工具、游戏日志查看器。
-*   **部署服务**：可选 **协助部署到你的服务器** 服务。
+- Telegram：[fox_lovemyself](https://t.me/fox_lovemyself)
+- GitHub：[德州私人局与朋友局源码](https://github.com/niubideren111/Texas-Hold-em-source-code)
 
----
+## 许可
 
+请按仓库现有 [LICENSE](LICENSE) 与 [License.md](License.md) 使用公开文件。商业工程、美术资源和完整部署资料的授权范围以书面约定为准。
 
 
 ## ⭐ 支持项目
