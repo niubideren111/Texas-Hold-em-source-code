@@ -6,6 +6,51 @@ Texas Holdem materials for private and friend tables, including public Unity log
 
 **private poker source code · Texas Holdem source code · Unity poker source code · friend table poker**
 
+## ✨ Project Highlights
+
+- **🎯 Server-Authoritative Architecture**: All game logic is executed on the server, helping prevent cheating and unauthorized modifications while ensuring fair gameplay.
+- **⚡ High-Concurrency Real-Time Communication**: WebSocket-based communication provides low-latency multiplayer gameplay and supports high concurrent traffic.
+- **🧠 Built-in AI Bots**: Intelligent bots can be used for automated testing and filling empty seats, making local development and debugging easier.
+- **🧩 Modular Design**: The C++ codebase separates business logic from the networking layer, simplifying secondary development and feature expansion.
+- **💾 Data Persistence**: Complete hand histories and player activity logs are recorded for anti-cheat analysis, auditing, and operational statistics.
+- **🐳 One-Click Deployment**: Docker images and Docker Compose configurations are included, allowing developers to start the complete service stack quickly.
+
+---
+
+## 🎮 Features
+
+| Module | Description |
+| :--- | :--- |
+| **Classic Texas Hold'em** | Supports 6-max and 9-max tables with complete betting, raising, folding, and showdown logic |
+| **Private / Friends Tables** | Create private rooms for friends, with password protection and spectator mode |
+| **Club / Union System** | Create or join clubs, organize internal ranked games, and view club performance statistics |
+| **Tournament System** | Supports Multi-Table Tournaments (MTT), Sit & Go (SNG), bounty tournaments, and satellite tournaments |
+| **Poker Variants** | Supports **Short Deck**, Omaha, and other poker variants |
+| **Social and Security Features** | Includes friends, emoji chat, anti-cheat risk control, and operation audit logs |
+
+---
+
+📖 For detailed build options, configuration references, and protocol documentation, see the `docs/` directory in the project root.
+
+## 🏗️ Technical Architecture
+
+```text
+Server:
+C++11/14/17, built on a high-performance networking framework with support for horizontal scaling on Linux
+
+Client:
+Unity 2019+ sample client written in C#, supporting Android, iOS, and PC builds
+
+Communication Protocol:
+WebSocket with a custom binary protocol for efficient real-time data transmission
+
+Data Storage:
+MySQL for persistent data and Redis for caching frequently accessed data
+
+Supporting Tools:
+Administration panel, bot configuration tools, and game log analysis viewer
+
+
 ## What this repository presents
 
 ### Private tables and clubs
