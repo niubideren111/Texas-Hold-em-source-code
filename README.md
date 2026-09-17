@@ -1,5 +1,12 @@
-# 🃏 德州私人局源码(德州源码)｜朋友局 | 德州俱乐部 |
-# 🃏 德州扑克服务端引擎 | C++ 高并发多人游戏源码
+# 🃏 德州私人局源码(德州源码)｜朋友局、德州俱乐部 |Unity 场景与服务器资料
+
+> 中文简体 · 中文繁體 · English 多语言产品与源码资料
+
+[简体中文](README.zh-CN.md) · [繁體中文](README.zh-TW.md) · [English](README.en.md) · [产品页面](https://niubideren111.github.io/Texas-Hold-em-source-code/zh-cn/)
+
+围绕私人局、朋友局和俱乐部牌桌的德州扑克代码资料。公开仓库包含 Unity 登录与大厅场景、C++ 订单和路由服务文件、配置示例，以及牌局流程图与产品截图。
+
+**德州私人局源码 · 德州朋友局源码 · 德州扑克源码 · Unity德州场景**
 
 [![GitHub stars](https://img.shields.io/github/stars/niubideren111/Texas-Hold-em-source-code)](https://github.com/niubideren111/Texas-Hold-em-source-code/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/niubideren111/Texas-Hold-em-source-code)](https://github.com/niubideren111/Texas-Hold-em-source-code/network)
