@@ -6,50 +6,39 @@ Texas Holdem materials for private and friend tables, including public Unity log
 
 **private poker source code · Texas Holdem source code · Unity poker source code · friend table poker**
 
-## ✨ Project Highlights
+## Project highlights
 
-- **🎯 Server-Authoritative Architecture**: All game logic is executed on the server, helping prevent cheating and unauthorized modifications while ensuring fair gameplay.
-- **⚡ High-Concurrency Real-Time Communication**: WebSocket-based communication provides low-latency multiplayer gameplay and supports high concurrent traffic.
-- **🧠 Built-in AI Bots**: Intelligent bots can be used for automated testing and filling empty seats, making local development and debugging easier.
-- **🧩 Modular Design**: The C++ codebase separates business logic from the networking layer, simplifying secondary development and feature expansion.
-- **💾 Data Persistence**: Complete hand histories and player activity logs are recorded for anti-cheat analysis, auditing, and operational statistics.
-- **🐳 One-Click Deployment**: Docker images and Docker Compose configurations are included, allowing developers to start the complete service stack quickly.
+- **Private and friend tables:** product screens and workflow materials focused on games among invited players.
+- **Poker club entry points:** references for joining a club, browsing club lists and entering club tables.
+- **Unity client scenes:** public login, lobby, splash and upgrade scenes that illustrate client organization.
+- **C++ server materials:** selected Order, Router and Push service files with configuration and operation scripts.
+- **Gameplay diagrams:** private-table, quick-game and SNG workflows for studying room and tournament behavior.
+- **Multilingual documentation:** Simplified Chinese, Traditional Chinese and English READMEs plus illustrated Pages content.
 
----
+## Features
 
-## 🎮 Features
+| Area | Included product or repository material |
+|---|---|
+| Classic Texas Holdem | Multiplayer table, action area and hand-related product screens |
+| Private / friend tables | Table creation, entry and gameplay workflow references for invited groups |
+| Poker clubs | Club entry, join flow, club list and table screens |
+| Login and lobby | Unity login, test-login, lobby, splash and upgrade scenes |
+| Quick game / SNG | Quick-game and SNG workflow diagrams |
+| Social interaction | Table menus and friend-game interactions visible in product screenshots |
+| Order and routing | Selected C++ Order, Router and Push implementation and configuration files |
+| Configuration and operations | RouterServer configuration plus start, stop and copy scripts |
 
-| Module | Description |
-| :--- | :--- |
-| **Classic Texas Hold'em** | Supports 6-max and 9-max tables with complete betting, raising, folding, and showdown logic |
-| **Private / Friends Tables** | Create private rooms for friends, with password protection and spectator mode |
-| **Club / Union System** | Create or join clubs, organize internal ranked games, and view club performance statistics |
-| **Tournament System** | Supports Multi-Table Tournaments (MTT), Sit & Go (SNG), bounty tournaments, and satellite tournaments |
-| **Poker Variants** | Supports **Short Deck**, Omaha, and other poker variants |
-| **Social and Security Features** | Includes friends, emoji chat, anti-cheat risk control, and operation audit logs |
+## Technical architecture
 
----
+| Layer | Public material |
+|---|---|
+| Unity client | `Splash.unity`, `Upgrade.unity`, `Login.unity`, `LoginTest.unity`, `Hall.unity` |
+| Gameplay documentation | Private-table, quick-game and SNG diagrams plus product screenshots |
+| C++ services | Selected Order, Router and Push service implementations and interfaces |
+| Configuration | `config/RouterServer.conf` and application configuration examples |
+| Operations | `script/start.sh`, `script/stop.sh`, `script/copy.sh` |
 
-📖 For detailed build options, configuration references, and protocol documentation, see the `docs/` directory in the project root.
-
-## 🏗️ Technical Architecture
-
-```text
-Server:
-C++11/14/17, built on a high-performance networking framework with support for horizontal scaling on Linux
-
-Client:
-Unity 2019+ sample client written in C#, supporting Android, iOS, and PC builds
-
-Communication Protocol:
-WebSocket with a custom binary protocol for efficient real-time data transmission
-
-Data Storage:
-MySQL for persistent data and Redis for caching frequently accessed data
-
-Supporting Tools:
-Administration panel, bot configuration tools, and game log analysis viewer
-
+The material describes a client flow from login and lobby to rooms or tables, supported by routing and order services. The feature table covers the visible product and public reference material. Verify dependencies, assets and configuration in the repository before treating any component as independently buildable.
 
 ## What this repository presents
 
@@ -90,7 +79,7 @@ Use order, router and gameplay diagram files as server-reading entry points.
 | [Hall.unity](Hall.unity) | Public UNITY file: Hall.unity. |
 | [OrderServantImp.cpp](OrderServantImp.cpp) | Public CPP file: OrderServantImp.cpp. |
 | [RouterServer.h](RouterServer.h) | Public H file: RouterServer.h. |
-| [Doc/游戏玩法/GamePlay(Private).png](Doc/%E6%B8%B8%E6%88%8F%E7%8E%A9%E6%B3%95/GamePlay(Private).png) | Public PNG file: GamePlay(Private).png. |
+| [Doc/游戏玩法/GamePlay(Private).png](Doc/%E6%B8%B8%E6%88%8F%E7%8E%A9%E6%B3%95/GamePlay%28Private%29.png) | Private-table gameplay diagram. |
 
 ## Start reading
 
